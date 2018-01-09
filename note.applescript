@@ -11,3 +11,10 @@ set theURL to "https://www.hellochao.vn/ba-cau-noi-chat-moi-ngay#2018-01-06"
 set theSubString to "ba-cau-noi-chat-moi-ngay"
 cutSubStringFromBeginningOf(theURL, theSubString)
 
+on getCurrentURLChrome()
+    tell application "Google Chrome"
+        set currentURL to get URL of active tab of first window
+    end tell
+    
+    return currentURL
+end getCurrentURLChrome

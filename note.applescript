@@ -18,3 +18,20 @@ on getCurrentURLChrome()
     
     return currentURL
 end getCurrentURLChrome
+
+on addFavoriteChrome(theString)
+    tell application "Google Chrome"
+        activate
+        
+        tell application "System Events"
+            set the clipboard to theString
+            keystroke "d" using {command down}
+            delay 0.1
+            keystroke "v" using {command down}
+            delay 0.1
+            key code 36
+        end tell
+    end tell
+end addFavoriteChrome
+
+addFavoriteChrome("aaa")
